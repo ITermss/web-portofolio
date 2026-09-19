@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -17,3 +19,5 @@ Route::get('/education', function () {
 Route::get('/projects', function () {
     return view('projects');
 })->name('projects');
+
+Route::resource('projects', ProjectController::class);
